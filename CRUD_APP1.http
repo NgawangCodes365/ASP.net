@@ -16,7 +16,7 @@ GET {{CRUD_APP1_HostAddress}}/Product
 Accept: application/json
 
 ### Get product by ID
-GET {{CRUD_APP1_HostAddress}}/Product/1
+GET {{CRUD_APP1_HostAddress}}/Product/2
 Accept: application/json
 
 ###
@@ -29,4 +29,5 @@ Content-Type: application/json
     "quantity": 10
 }
 
+###
 DELETE {{CRUD_APP1_HostAddress}}/Product/1
