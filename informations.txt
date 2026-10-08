@@ -1,0 +1,6 @@
+Migrations : is telling EF core to look at 
+current models and create a set of instruction describing the DS i want ?
+
+
+dotnet ef migrations add InitialCreate
+This generates a migration folder containing C# files.
