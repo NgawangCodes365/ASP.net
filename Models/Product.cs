@@ -9,6 +9,8 @@
 
 
 
+using System.ComponentModel.DataAnnotations;
+
 namespace CRUD_APP1.Models;
 //namespace is way of organizing related C# codes.
 //Basically, later when we do using CRUD_APP1.Models we will know where the product.cs is at.
@@ -21,14 +23,16 @@ public class Product
 // id of football, name of football, price of football ..these are all necessary details a football may have.
 //class includes all of these information.
 {
+    [Key]
     public int Id{ get;set;}
     //the access type is public
     //the data must be integer.
     //get;set means getter and setter which means its value can be read and changed.
 
     public string Name{get;set;}=string.Empty;
-    //intially value must be "" .i.e empty
+    //intially value must be " " .i.e empty
     public decimal Price{get;set;}
+    
 
     public int Quantity{get;set;}
 }

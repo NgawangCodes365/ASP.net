@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 //this tells asp.net that this app will use controller
 
+
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("PrimaryConnection")
@@ -17,8 +19,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     //the final line builder.config..... means go to the configuration file .i.e. appsettings.json and find
     //Connection string named DefaultConnection.
 
+
 builder.Services.AddOpenApi();
 //this enables OpenAPI support so that we can describe/test our API.
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 //so the configuration we created through builder = turns into a web application.
@@ -27,6 +31,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();
